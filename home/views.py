@@ -18,9 +18,11 @@ def index(request):
     channel_name = database.child('Data').child('Name').get().val()
     channel_subs = database.child('Data').child('Subscribers').get().val()
     channel_type = database.child('Data').child('Type').get().val()
+    channel_chan= database.child('Data').child('Channel').get().val()
 
     return render(request, 'index.html', {
         "channel_name" : channel_name,
         "channel_subs" : channel_subs,
         "channel_type" : channel_type,
+        "channel_chan" : channel_chan,
     })
